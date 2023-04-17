@@ -1,3 +1,4 @@
+let formViaje = document.getElementById('formViaje');
 let origen = document.getElementById('origen');
 let destino = document.getElementById('destino');
 let fechaPartida = document.getElementById('origenFecha');
@@ -8,20 +9,32 @@ let itinerarioFechaOrigen = document.getElementById('itinerarioFechaOrigen');
 let itinerarioFechaDestino = document.getElementById('itinerarioFechaDestino');
 let mensajeEscala = document.getElementById('mensajeEscala');
 
-origen.addEventListener('change', () => {
+formViaje.addEventListener('submit', (event) => {
+	event.preventDefault();
+	validarOrigen();
+});
+
+let validarOrigen = () => {
 	itinerarioOrigen.innerHTML = origen.value;
-	generarComentario();
-});
-destino.addEventListener('change', () => {
 	itinerarioDestino.innerHTML = destino.value;
-	generarComentario();
-});
-fechaPartida.addEventListener('change', () => {
+	if (itinerarioOrigen.innerHTML == '' || itinerarioDestino.innerHTML == '') {
+		alert('Debes seleccionar origen y destino para tu viaje');
+	} else {
+		validarFecha();
+	}
+};
+let validarFecha = () => {
 	itinerarioFechaOrigen.innerHTML = fechaPartida.value;
-});
-fechaRetorno.addEventListener('change', () => {
 	itinerarioFechaDestino.innerHTML = fechaRetorno.value;
-});
+	if (
+		itinerarioFechaOrigen.innerHTML == '' ||
+		itinerarioFechaDestino.innerHTML == ''
+	) {
+		alert('Debes seleccionar fecha de partida y vuelta para tu viaje');
+	} else {
+		generarComentario();
+	}
+};
 
 let generarComentario = () => {
 	if (

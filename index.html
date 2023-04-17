@@ -62,54 +62,59 @@
 					Estás a sólo unos pasos de estar en el destino de tus sueños para tus
 					vacaciones. A continuación cuéntanos adonde quieres ir.
 				</p>
-				<div class="row justify-content-center">
-					<div class="col-3 input-group-sm text-center">
-						<label class="form-label" for="origen">Origen:</label>
-						<select
-							class="form-select mb-2 text-start"
-							name="origen"
-							id="origen"
-						>
-							<option selected>Elige el origen</option>
-							<option value="NY">New York, USA</option>
-							<option value="Boston">Boston, USA</option>
-							<option value="Chicago">Chicago, USA</option>
-						</select>
-						<input
-							class="d-block"
-							type="date"
-							name="origen-fecha"
-							id="origenFecha"
-						/>
-					</div>
-					<div class="col-3 input-group-sm text-center">
-						<label class="form-label" for="destino">Destino:</label>
-						<select
-							class="form-select mb-2 text-start"
-							name="destino"
-							id="destino"
-						>
-							<option selected>Elige un destino</option>
+				<form class="shadow-lg rounded p-4" id="formViaje">
+					<div class="row justify-content-center">
+						<div class="col-3 input-group-sm text-center">
+							<label class="form-label" for="origen">Origen:</label>
+							<select
+								class="form-select mb-2 text-start"
+								name="origen"
+								id="origen"
+							>
+								<option selected value="">Elige el origen</option>
+								<option value="NY">New York, USA</option>
+								<option value="Boston">Boston, USA</option>
+								<option value="Chicago">Chicago, USA</option>
+							</select>
+							<input
+								class="w-100"
+								type="date"
+								name="origen-fecha"
+								id="origenFecha"
+							/>
+						</div>
+						<div class="col-3 input-group-sm text-center">
+							<label class="form-label" for="destino">Destino:</label>
+							<select
+								class="form-select mb-2 text-start"
+								name="destino"
+								id="destino"
+							>
+								<option selected value="">Elige un destino</option>
 
-							<option value="London">London, UK</option>
-							<option value="Paris">París, FR</option>
-							<option value="Venice">Venice, IT</option>
-						</select>
-						<input
-							class="d-block"
-							type="date"
-							name="destino-fecha"
-							id="destinoFecha"
-						/>
+								<option value="London">London, UK</option>
+								<option value="Paris">París, FR</option>
+								<option value="Venice">Venice, IT</option>
+							</select>
+							<input
+								class="w-100"
+								type="date"
+								name="destino-fecha"
+								id="destinoFecha"
+							/>
+						</div>
 					</div>
-				</div>
+					<button type="submit" class="btn btn-success mt-4">
+						Buscar Vuelos
+					</button>
+				</form>
 			</div>
 			<div class="container row mx-auto bg-light py-5 text-center">
 				<h2 class="col-12">Itinerario</h2>
 				<hr class="col-12 my-3" />
 				<div class="col-4 text-center">
 					<span class="badge text-bg-primary" id="itinerarioFechaOrigen"></span>
-					<h4 id="itinerarioOrigen">Origen</h4>
+					<h4 id="itinerarioOrigen"></h4>
 					<button class="btn btn-primary btn-sm">Ver mas información</button>
 				</div>
 				<div class="col-4 text-center">
@@ -120,7 +125,7 @@
 						class="badge text-bg-success"
 						id="itinerarioFechaDestino"
 					></span>
-					<h4 id="itinerarioDestino">Destino</h4>
+					<h4 id="itinerarioDestino"></h4>
 					<button class="btn btn-primary btn-sm">Ver mas información</button>
 				</div>
 			</div>
